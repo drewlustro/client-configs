@@ -1,0 +1,30 @@
+directory: /Volumes/Obsidian/FLAC
+library: /Volumes/Obsidian/FLAC/beets/flac-library.blb
+ignore: .AppleDouble ._* *~ .DS_Store
+art_filename: cover
+threaded: yes
+color: yes
+
+import:
+    copy: yes
+    write: yes
+    resume: ask
+    log: /Volumes/Obsidian/FLAC/beets/beets.log
+
+paths:
+    default: $albumartist/$album%aunique{} ($year)/$track $artist - $year - $title
+    singleton: Singles/$artist - $year - $title
+    comp: Compilations/$album%aunique{} ($year)/$track $title
+
+acoustid:
+    apikey: 7HIrgs2T
+lyrics:
+    google_API_key: AIzaSyBmAJZCciUPGoQ0INcHLpAJ6l8cC3Bz2qw
+    auto: yes
+fetchart:
+    auto: yes
+    maxwidth: 1000
+scrub:
+    auto: yes
+
+plugins: chroma discogs lyrics fetchart fromfilename scrub web embedart
